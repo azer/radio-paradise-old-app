@@ -1,0 +1,21 @@
+bundle = bin 'one/onejs'
+stylus = bin 'stylus'
+jsify = bin 'jsify'
+
+all 'dist/index.html', 'dist/paradise.js', 'dist/paradise.css'
+
+target 'dist/index.html', 'index.html', ->
+    debug 'Building dist/paradise.js'
+    cp '-f', 'index.html', 'dist/index.html'
+
+target 'dist/paradise.js', '*.js', 'lib/*.js', 'node_modules', 'components', ->
+    debug 'Building dist/paradise.js'
+    bundle "index.js -o dist/paradise.js"
+
+target 'dist/paradise.css', 'paradise.styl', ->
+    debug 'Building dist/paradise.css'
+    stylus "paradise.styl -o dist/"
+
+task 'deploy', ->
+    mkdir '-p', 'prod'
+    cp '-rf', 'dist/*', 'prod/.'

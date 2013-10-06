@@ -1,0 +1,50 @@
+@import "fonts.css"
+
+frame()
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+
+center()
+  display -ms-flexbox
+  -ms-flex-pack center
+  -ms-flex-align center
+
+  display -moz-box
+  -moz-box-pack center
+  -moz-box-align center
+
+  display  -webkit-box
+  -webkit-box-pack center
+  -webkit-box-align center
+
+cover(src)
+  frame()
+  z-index 1
+  background url(src) no-repeat center bottom
+  background-size cover
+
+html, body
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+
+body
+  font 12px Helvetica, Arial, sans-serif
+
+.cover
+  cover("http://farm2.staticflickr.com/1164/4609479797_6ee8621b84_o.jpg")
+
+.container
+  frame()
+  center()
+  z-index 2
+
+h1
+  center()
+  font italic 700 84px/1.2 "playfair display"
+  color rgba(255, 255, 255, 0.2)
+  cursor default

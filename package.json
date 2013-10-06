@@ -1,0 +1,25 @@
+{
+  "name": "radio-paradise",
+  "version": "0.0.0",
+  "description": "Alternative Radio Paradise App",
+  "main": "index.js",
+  "scripts": {
+    "test": "fox"
+  },
+  "dependencies": {
+    "domquery": "*",
+    "play-audio": "*"
+  },
+  "devDependencies": {
+    "stylus": "*",
+    "one": "*"
+  },
+  "keywords": [
+  ],
+  "repository": {
+    "url": "git@github.com:azer/radio-paradise.git",
+    "type": "git"
+  },
+  "author": "Azer Koçulu <azer@kodfabrik.com>",
+  "license": "BSD"
+}
