@@ -1,11 +1,21 @@
-var play = require("play-audio");
+var audio = require("play-audio");
 var dom = require('domquery');
+var player;
 
-var player = play('http://stream-tx4.radioparadise.com/ogg-192').autoplay();
+play();
 
 dom(window).on('> space', toggle);
 
 function toggle () {
-  if (player.element().paused) return player.play();
-  player.pause();
+  if (!player) return play();
+  stop();
+}
+
+function play () {
+  player = audio('http://stream-tx4.radioparadise.com/ogg-192').autoplay();
+}
+
+function stop () {
+  player.element().parentNode.removeChild(player.element());
+  player = undefined;
 }
